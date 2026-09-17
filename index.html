@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#e9eef4" />
+  <title>For Fabian Coolen</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><div class="ambient__wash"></div><div class="ambient__grain"></div></div>
+
+  <header class="masthead">
+    <div>FOR FABIAN · 09.19, 2026</div>
+    <div class="masthead__sub">A LITTLE BOOK FOR YOU FROM RUOWEN.</div>
+  </header>
+
+  <main class="scene" id="scene">
+    <div class="book-camera" id="bookCamera">
+      <div class="book" id="book" aria-label="Interactive birthday book">
+        <div class="book__shadow" aria-hidden="true"></div>
+        <div class="book__edge" aria-hidden="true"></div>
+        <div class="book__left page-slot" id="leftSlot"></div>
+        <div class="book__right page-slot" id="rightSlot"></div>
+        <div class="book__seam" aria-hidden="true"></div>
+        <div class="book__cast-shadow" id="castShadow" aria-hidden="true"></div>
+        <div class="curl-layer" id="curlLayer" aria-hidden="true"></div>
+
+        <div class="cover-card" id="coverCard" aria-hidden="true">
+          <div class="cover-card__face cover-card__front">
+            <span class="cover-card__small">A BIRTHDAY BOOK,</span>
+            <strong>For Fabian Coolen</strong>
+            <span class="cover-card__date">09 · 19 · 2026</span>
+          </div>
+          <div class="cover-card__face cover-card__back"><span>Happy Birthday,</span><em>Fabian</em></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="nav nav--prev" id="prevBtn" aria-label="Previous spread">←</button>
+    <button class="nav nav--next" id="nextBtn" aria-label="Next spread">→</button>
+
+    <div class="intro-copy" id="introCopy">
+      <button class="open-pill" id="openBtn"><span class="open-pill__icon">↗</span> Open Book</button>
+      <p>09.19 - Fabian's day</p><span>made for Fabian F. Coolen only.</span>
+    </div>
+
+    <div class="pager" id="pager" aria-label="Page navigation"></div>
+    <button class="sound" id="soundBtn" aria-pressed="false">sound off</button>
+  </main>
+
+  <footer class="footer"><span>Sep 19 · 2026</span><span>MADE FOR FABIAN F. COOLEN ONLY</span></footer>
+
+  <div id="pageTemplates" hidden>
+
+    <!-- 01 · Birthday opening -->
+    <section class="page text-page theme-sky" data-page="0">
+      <div class="page__folio">01</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">FABIAN'S DAY · SEP 19, 2026</p>
+        <h1>Happy birthday.</h1>
+        <p>Hoi Fabi,</p>
+        <p>I wanted to make you something a little more personal.</p>
+        <p>Something warm.</p>
+        <p>Something fun.</p>
+        <p>Something we can keep.</p>
+      </div>
+      <div class="date-mark"><span>09</span><span>19</span></div>
+    </section>
+    <section class="page media-page theme-sky" data-page="1">
+      <div class="page__folio page__folio--right">02</div>
+      <div class="photo-layout layout-trio-landscape">
+        <figure><img src="assets/photos/P1_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P1_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p1_3.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+
+    <!-- 02 · Things I like about you -->
+    <section class="page media-page theme-sun" data-page="2">
+      <div class="page__folio">03</div>
+      <div class="photo-layout layout-quad-feature-portrait">
+        <figure><img src="assets/photos/P2_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P2_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P2_3.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P2_4.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+    <section class="page text-page theme-sun" data-page="3">
+      <div class="page__folio page__folio--right">04</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">YOU</p>
+        <h2>There are a lot of things I like about you.</h2>
+        <p>Some are easy to explain. Some aren’t.</p>
+        <p>I like your smile. Especially because it makes me smile almost immediately.</p>
+        <p>I like how soft your heart actually is.</p>
+        <p>I like the way you care.</p>
+        <strong>And I really like the version of you that gets a little clingy.</strong>
+      </div>
+    </section>
+
+    <!-- 03 · Your smile -->
+    <section class="page text-page theme-rose" data-page="4">
+      <div class="page__folio">05</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">YOUR SMILE</p>
+        <h2>I really like seeing you happy.</h2>
+        <p>The real kind.</p>
+        <p>When you smile without thinking about it.</p>
+        <p>When your whole face changes.</p>
+        <p>When I look at you and somehow start smiling too.</p>
+        <strong>More of that this year, please.</strong>
+      </div>
+    </section>
+    <section class="page media-page theme-rose" data-page="5">
+      <div class="page__folio page__folio--right">06</div>
+      <div class="photo-layout layout-pair-portrait">
+        <figure><img src="assets/photos/P3_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P3_2.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+
+    <!-- 04 · A small complaint + Video 01 -->
+    <section class="page text-page theme-cobalt" data-page="6">
+      <div class="page__folio">07</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">A SMALL COMPLAINT</p>
+        <p>There is one slightly annoying thing about you.</p>
+        <p>Whenever you’re next to me, I become completely useless.</p>
+        <p>I could have ten things to do and somehow my brain decides:</p>
+        <h2 class="punchline">nope.<br>we’re looking at him now.</h2>
+        <em>Very inconvenient.</em>
+      </div>
+    </section>
+    <section class="page video-page theme-cobalt" data-page="7">
+      <div class="page__folio page__folio--right">08</div>
+      <div class="video-shell">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/videos/01-poster.jpg" data-poster="assets/videos/01-poster.jpg">
+          <source src="assets/videos/01.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- 05 · The first time I saw you -->
+    <section class="page media-page theme-green" data-page="8">
+      <div class="page__folio">09</div>
+      <div class="photo-layout layout-pair-mixed">
+        <figure><img src="assets/photos/P5_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p5_2.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+    <section class="page text-page theme-green" data-page="9">
+      <div class="page__folio page__folio--right">10</div>
+      <div class="text-block text-block--centered">
+        <p class="eyebrow">07 · 03 · THE FIRST TIME I SAW YOU</p>
+        <div class="giant-number">07<span>03</span></div>
+        <p>I still remember that first look.</p>
+        <p>Your smile.</p>
+        <p>And one very clear thought:</p>
+        <h1>oh no.</h1>
+        <p>This is karma.<br>I’m in trouble.</p>
+      </div>
+    </section>
+
+    <!-- 06 · Why you? -->
+    <section class="page text-page theme-violet" data-page="10">
+      <div class="page__folio">11</div>
+      <div class="text-block text-block--ultra fit-long">
+        <p class="eyebrow">WHY YOU? · MAYBE IT’S THIS</p>
+        <p>You and other people have asked me:</p>
+        <h2>“Why do you like him?”</h2>
+        <p>And honestly, that is a surprisingly difficult question.</p>
+        <p>Not because I don’t know.</p>
+        <strong>Maybe because there isn’t just one answer.</strong>
+        <div class="rule"></div>
+        <p>Maybe it’s all the little things.</p>
+        <p>Our conversations.</p>
+        <p>The way you make me feel special.</p>
+        <p>The way you remind me that I look good even without makeup.</p>
+        <p>Your smile. The warmth of your hugs. The way you curl up in my arms. The tiny electric feeling when you kiss me.</p>
+        <strong>Sometimes I can just look at you and feel completely satisfied.</strong>
+      </div>
+    </section>
+    <section class="page media-page theme-violet" data-page="11">
+      <div class="page__folio page__folio--right">12</div>
+      <div class="photo-layout layout-trio-landscape">
+        <figure><img src="assets/photos/P6_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p6_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p6_3.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+
+    <!-- 07 · Gold + Video 04 -->
+    <section class="page video-page theme-mint" data-page="12">
+      <div class="page__folio">13</div>
+      <div class="video-shell">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/videos/04-poster.jpg" data-poster="assets/videos/04-poster.jpg">
+          <source src="assets/videos/04.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+    <section class="page text-page theme-mint" data-page="13">
+      <div class="page__folio page__folio--right">14</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">79 · GOLD</p>
+        <div class="element-card"><span>79</span><b>Au</b><small>GOLD</small></div>
+        <p>Gold is element number 79 on the periodic table.</p>
+        <p>And today happens to be the 79th day since I first saw you.</p>
+        <p>Gold has always been something people keep because it’s precious.</p>
+        <p>So I liked the coincidence.</p>
+        <strong>Because somewhere along these 79 days, you became someone precious to me too.</strong>
+      </div>
+    </section>
+
+    <!-- 08 · A version of you I love -->
+    <section class="page text-page theme-coral" data-page="14">
+      <div class="page__folio">15</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">A VERSION OF YOU I LOVE</p>
+        <p>One of my favourite versions of you is the one curled up in my arms.</p>
+        <p>The one who gets a little needy.</p>
+        <p>The one who wants attention.</p>
+        <p>The one who lets himself be spoiled.</p>
+        <h2>You’re ridiculously cute like that.</h2>
+        <em>Just saying.</em>
+      </div>
+    </section>
+    <section class="page media-page theme-coral" data-page="15">
+      <div class="page__folio page__folio--right">16</div>
+      <div class="photo-layout layout-trio-landscape">
+        <figure><img src="assets/photos/P8_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p8_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P2_2.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+
+    <!-- 09 · 100 days -->
+    <section class="page media-page theme-peach" data-page="16">
+      <div class="page__folio">17</div>
+      <div class="photo-layout layout-pair-stack-landscape">
+        <figure><img src="assets/photos/P9_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P9_2.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+    <section class="page text-page theme-peach" data-page="17">
+      <div class="page__folio page__folio--right">18</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">09 · 14 · 100 DAYS</p>
+        <div class="day100">100</div>
+        <h2>100 days since we reconnected.</h2>
+        <p>And the night I randomly said:</p>
+        <h1>I love you.</h1>
+        <em>A little dramatic of me. But okay.</em>
+        <p>It's from my heart.</p>
+      </div>
+    </section>
+
+    <!-- 10 · Back to you -->
+    <section class="page text-page theme-indigo" data-page="18">
+      <div class="page__folio">19</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">BACK TO YOU</p>
+        <p>But today isn’t really about dates.</p>
+        <p>Or numbers.</p>
+        <p>Or us.</p>
+        <h1>It’s about you.</h1>
+        <p>And the fact that you made it through another year.</p>
+        <strong>So now—a few things I hope for you.</strong>
+      </div>
+    </section>
+    <section class="page media-page theme-indigo" data-page="19">
+      <div class="page__folio page__folio--right">20</div>
+      <div class="photo-layout layout-trio-portrait">
+        <figure><img src="assets/photos/P10_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P10_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P10_3.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+
+    <!-- 11 · For your next year -->
+    <section class="page media-page theme-blue" data-page="20">
+      <div class="page__folio">21</div>
+      <div class="photo-layout layout-quad-balanced">
+        <figure><img src="assets/photos/P3_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P11_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P11_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P2_1.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+    <section class="page text-page theme-blue" data-page="21">
+      <div class="page__folio page__folio--right">22</div>
+      <div class="birthday-stars" aria-hidden="true"></div>
+      <div class="text-block text-block--dense fit-long">
+        <p class="eyebrow">FOR YOUR NEXT YEAR</p>
+        <h2>More days where life simply feels good.</h2>
+        <p>I hope you laugh a lot.</p>
+        <p>Sleep well.</p>
+        <p>Eat really good food.</p>
+        <p>Go somewhere new.</p>
+        <p>Find things that genuinely excite you.</p>
+        <p>Find things you love simply because <strong>you</strong> love them.</p>
+        <p>I hope you feel safe.</p>
+        <p>I hope you feel loved.</p>
+        <p>I hope your body is healthy.</p>
+        <strong>And I hope there are more days where life simply feels good.</strong>
+      </div>
+    </section>
+
+    <!-- 12 · One thing + Video 02 -->
+    <section class="page text-page theme-lilac" data-page="22">
+      <div class="page__folio">23</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">ONE THING</p>
+        <h1>try.</h1>
+        <p>You don’t have to have everything figured out.</p>
+        <p>You don’t need the perfect plan before you start.</p>
+        <p>You don’t have to become the perfect version of yourself first.</p>
+      </div>
+      <div class="ghost-word">START</div>
+    </section>
+    <section class="page video-page theme-lilac" data-page="23">
+      <div class="page__folio page__folio--right">24</div>
+      <div class="video-shell">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/videos/02-poster.jpg" data-poster="assets/videos/02-poster.jpg">
+          <source src="assets/videos/02.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- 12 · One thing continued + Video 03 -->
+    <section class="page video-page theme-lilac" data-page="24">
+      <div class="page__folio">25</div>
+      <div class="video-shell">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/videos/03-poster.jpg" data-poster="assets/videos/03-poster.jpg">
+          <source src="assets/videos/03.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+    <section class="page text-page theme-lilac" data-page="25">
+      <div class="page__folio page__folio--right">26</div>
+      <div class="text-block text-block--centered">
+        <p class="eyebrow">ONE THING · CONTINUED</p>
+        <h2>Sometimes you can just—try.</h2>
+        <p>See what happens.</p>
+        <p>Change your mind later.</p>
+        <strong>You don’t have to be perfect to start.</strong>
+      </div>
+    </section>
+
+    <!-- 13 · More of this -->
+    <section class="page text-page theme-cream" data-page="26">
+      <div class="page__folio">27</div>
+      <div class="text-block">
+        <p class="eyebrow">MORE OF THIS</p>
+        <h1>More.</h1>
+        <p>More stupid jokes.</p>
+        <p>More spontaneous plans.</p>
+        <p>More really good meals.</p>
+        <p>More songs you want to replay.</p>
+        <p>More hugs.</p>
+        <p>More things worth taking pictures of.</p>
+        <strong>More days where you smile without having to think about it.</strong>
+      </div>
+    </section>
+    <section class="page media-page theme-cream" data-page="27">
+      <div class="page__folio page__folio--right">28</div>
+      <div class="photo-layout layout-trio-feature-top">
+        <figure><img src="assets/photos/P13_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P13_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/P13_3.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+
+    <!-- 14 · I hope you know -->
+    <section class="page media-page theme-gold" data-page="28">
+      <div class="page__folio">29</div>
+      <div class="photo-layout layout-pair-mixed-reverse">
+        <figure><img src="assets/photos/p14_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p14_2.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+    <section class="page text-page theme-gold" data-page="29">
+      <div class="page__folio page__folio--right">30</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">I HOPE YOU KNOW</p>
+        <p>I don’t know if you realise it enough, but you bring a lot of happiness to the people around you.</p>
+        <p>You notice people.</p>
+        <p>You care.</p>
+        <p>You worry about them.</p>
+        <p>You make people feel seen.</p>
+        <h2>And yes—</h2>
+        <strong>you bring a lot of happiness into my life too.</strong>
+        <em>Probably more than you realise.</em>
+      </div>
+    </section>
+
+    <!-- 15 · Happy Birthday -->
+    <section class="page text-page theme-sky" data-page="30">
+      <div class="page__folio">31</div>
+      <div class="birthday-stars" aria-hidden="true"></div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">HAPPY BIRTHDAY</p>
+        <h1>Happy Birthday.</h1>
+        <p>I hope this year is kind to you.</p>
+        <p>But more importantly, I hope you get to be kind to yourself too.</p>
+        <p>I hope life feels a little lighter.</p>
+        <p>A little more exciting.</p>
+        <p>A little more yours.</p>
+        <strong>And I hope this year gives back some of the happiness you give to everyone else.</strong>
+      </div>
+    </section>
+    <section class="page media-page theme-sky" data-page="31">
+      <div class="page__folio page__folio--right">32</div>
+      <div class="photo-layout layout-trio-landscape">
+        <figure><img src="assets/photos/p15_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p15_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p15_3.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+
+    <!-- 16 · Future -->
+    <section class="page media-page theme-sun" data-page="32">
+      <div class="page__folio">33</div>
+      <div class="photo-layout layout-pair-portrait">
+        <figure><img src="assets/photos/P16_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p16_2.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+    <section class="page text-page theme-sun" data-page="33">
+      <div class="page__folio page__folio--right">34</div>
+      <div class="text-block text-block--dense">
+        <p class="eyebrow">FUTURE</p>
+        <p>Every time we talk about the future, I find myself looking forward to it.</p>
+        <p>To the places we might go.</p>
+        <p>The things we might do.</p>
+        <p>The ordinary days we haven’t lived yet.</p>
+        <p>I don’t know exactly what all of it will look like.</p>
+        <h2>But somehow, when I imagine it with you, it feels like something beautiful.</h2>
+        <p>And I really look forward to it.</p>
+      </div>
+    </section>
+
+    <!-- 17 · Right now -->
+    <section class="page text-page theme-rose" data-page="34">
+      <div class="page__folio">35</div>
+      <div class="text-block text-block--ultra fit-long">
+        <p class="eyebrow">RIGHT NOW</p>
+        <p>I just really like being with you.</p>
+        <p>Talking to you.</p>
+        <p>Kissing you.</p>
+        <p>Doing absolutely nothing with you.</p>
+        <p>Watching you smile.</p>
+        <p>Watching you curl up in my arms like you secretly belong there.</p>
+        <p>I like how I feel when you’re simply next to me.</p>
+        <p>And I like that every time we talk about what might come next,</p>
+        <strong>I want to be there for it.</strong>
+        <p>No big speech. No dramatic promise.</p>
+        <p>I just want to enjoy this. Enjoy you. Enjoy us.</p>
+        <h2>I hope you have a really, really good birthday.</h2>
+        <em>I’m very glad you’re here.</em>
+        <span class="signature-date">09 / 19 / 26</span>
+      </div>
+    </section>
+    <section class="page media-page theme-rose" data-page="35">
+      <div class="page__folio page__folio--right">36</div>
+      <div class="photo-layout layout-five-mixed">
+        <figure><img src="assets/photos/p17_1.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p17_2.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p17_3.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p17_4.jpg" alt="memory photo"></figure>
+        <figure><img src="assets/photos/p17_5.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+
+    <!-- 18 · One more thing -->
+    <section class="page media-page theme-cobalt" data-page="36">
+      <div class="page__folio">37</div>
+      <div class="photo-layout layout-single">
+        <figure><img src="assets/photos/p18_1.jpg" alt="memory photo"></figure>
+      </div>
+    </section>
+    <section class="page text-page theme-cobalt" data-page="37">
+      <div class="page__folio page__folio--right">38</div>
+      <div class="text-block text-block--centered">
+        <p class="eyebrow">ONE MORE THING</p>
+        <p>People keep asking me why I like you.</p>
+        <p>I still don’t have the perfect answer.</p>
+        <p>Maybe my brain was simply late to the meeting.</p>
+        <h1>My body knew<br>before I did.</h1>
+        <strong>And eventually,<br>I caught up.</strong>
+      </div>
+    </section>
+
+  </div>
+
+  <audio id="bgm" preload="auto" loop src="assets/audio/felicity.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
